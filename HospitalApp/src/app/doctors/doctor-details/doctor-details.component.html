@@ -1,0 +1,28 @@
+
+<div style="text-align:center;">
+    <br>
+    <br>
+    <h3>{{doctorDetails.name}} {{doctorDetails.lastName}}</h3>
+    <br>
+    <p>Specialty : {{doctorDetails.specialty}}</p>
+    <br>
+    <p>Age : {{doctorDetails.age}}</p>
+    <br>
+    <br>
+    <h4>Working hours: </h4>
+    <br>
+    <p>Monday : {{doctorDetails.schedule.monday.start}} - {{doctorDetails.schedule.monday.end}} </p>
+    <hr>
+    <p>Tuesday : {{doctorDetails.schedule.tuesday.start}} - {{doctorDetails.schedule.tuesday.end}} </p>
+    <hr>
+    <p>Wednesday : {{doctorDetails.schedule.wednesday.start}} - {{doctorDetails.schedule.wednesday.end}} </p>
+    <hr>
+    <p>Thrusday : {{doctorDetails.schedule.thursday.start}} - {{doctorDetails.schedule.thursday.end}} </p>
+    <hr>
+    <p>Firday : {{doctorDetails.schedule.friday.start}} - {{doctorDetails.schedule.friday.end}} </p>
+    <br>
+    <br>
+
+    <button *ngIf="!isAppointment" type="button" class="btn btn-primary" [routerLink]="['/appointment', doctorDetails._id]">Make appointment</button>
+
+</div>

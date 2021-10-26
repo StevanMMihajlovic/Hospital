@@ -1,0 +1,48 @@
+
+<div class="row">
+  <div class="col-8">
+      <br>
+      <br>
+      
+      <div class="row">
+          <div class="col-4">
+              <select class="form-control" [(ngModel)]="params.filter.specialty" (change)="getDoctors()">
+                  <option value="" selected>All</option>
+                  <option *ngFor="let spec of specialtyList" [value]="spec" >{{spec | titlecase}}</option>
+              </select>
+
+          </div>
+          <div class="col-4">
+              <input type="text" class="form-control" placeholder="First name" name="doctorName" [(ngModel)]="params.filter.name" (change)="getDoctors()">
+              
+          </div>
+          <div class="col-4">
+              <input type="text" class="form-control" placeholder="Last Name" name="doctorLastName"  [(ngModel)]="params.filter.lastName" (change)="getDoctors()">
+              
+          </div>
+      </div>
+      <br>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th scope="col">First Name</th>
+                  <th scope="col">LastName</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Specialty</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let doctor of doctorList.results" [routerLink]="['/doctors', doctor._id]">
+                  <td>{{doctor.name}}</td>
+                  <td>{{doctor.lastName}}</td>
+                  <td>{{doctor.age}}</td>
+                  <td>{{doctor.specialty}}</td>
+              </tr>
+          </tbody>
+      </table>
+
+  </div>
+  <div class="col-4">
+      <router-outlet></router-outlet>
+  </div>
+</div>

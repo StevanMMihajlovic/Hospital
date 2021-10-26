@@ -1,0 +1,11 @@
+ul{
+    list-style: none;
+}
+
+li{
+    color:blue;
+}
+
+li:hover{
+    color:black;
+}
